@@ -13,7 +13,9 @@ public class UserDaoJDBCImpl implements UserDao {
     public UserDaoJDBCImpl(Connection connection) {
 
     }
-
+//    можно прописать один раз UserDaoJDBCImpl userDao = new UserDaoJDBCImpl(); а не в кажном методе лучше использовать
+//    интерфейс UserDao userDao = new UserDaoJDBCImpl();
+//в main испольpовать UserService
     public UserDaoJDBCImpl() {
 
     }
@@ -31,7 +33,7 @@ public class UserDaoJDBCImpl implements UserDao {
              Statement statement = conn.createStatement()) {
 
             statement.executeUpdate(createTable);
-            System.out.println("Таблица 'new_table' успешно создана или уже существует.");
+            System.out.println("Таблица 'users' успешно создана или уже существует.");
 
         } catch (SQLException e) {
             e.printStackTrace();
