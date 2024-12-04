@@ -13,9 +13,7 @@ public class UserDaoJDBCImpl implements UserDao {
     public UserDaoJDBCImpl(Connection connection) {
 
     }
-//    можно прописать один раз UserDaoJDBCImpl userDao = new UserDaoJDBCImpl(); а не в кажном методе лучше использовать
-//    интерфейс UserDao userDao = new UserDaoJDBCImpl();
-//в main испольpовать UserService
+
     public UserDaoJDBCImpl() {
 
     }
