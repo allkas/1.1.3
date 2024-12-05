@@ -10,18 +10,18 @@ import java.sql.SQLException;
 public class Main {
     public static void main(String[] args) throws SQLException {
         Util.getConnection();
-        UserDao userDao = new UserDaoHibernateImpl();
+        UserDao UserService = new UserDaoHibernateImpl();
 
-        userDao.createUsersTable();
+        UserService.createUsersTable();
 
-        userDao.saveUser("Name1", "LastName1", (byte) 20);
-        userDao.saveUser("Name2", "LastName2", (byte) 25);
-        userDao.saveUser("Name3", "LastName3", (byte) 31);
-        userDao.saveUser("Name4", "LastName4", (byte) 38);
-        userDao.getAllUsers();
-        userDao.removeUserById(1);
-//        userDao.cleanUsersTable();
-//        userDao.dropUsersTable();
+        UserService.saveUser("Name1", "LastName1", (byte) 20);
+        UserService.saveUser("Name2", "LastName2", (byte) 25);
+        UserService.saveUser("Name3", "LastName3", (byte) 31);
+        UserService.saveUser("Name4", "LastName4", (byte) 38);
+        UserService.getAllUsers();
+        UserService.removeUserById(1);
+        UserService.cleanUsersTable();
+        UserService.dropUsersTable();
 
     }
 

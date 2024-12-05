@@ -62,6 +62,7 @@ public class UserDaoHibernateImpl implements UserDao {
             user.setLastName(lastName);
             user.setAge(age);
             session.save(user);
+            System.out.println("User с именем — " + name + " добавлен в базу данных");
             transaction.commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -86,6 +87,9 @@ public class UserDaoHibernateImpl implements UserDao {
         try (Session session = sessionFactory.openSession()) {
             Transaction transaction = session.beginTransaction();
             users = session.createNativeQuery(getUsers, User.class).getResultList();
+            if (users != null) {
+                users.forEach(user -> System.out.println(user));
+            }
             transaction.commit();
         } catch (Exception e) {
             e.printStackTrace();
